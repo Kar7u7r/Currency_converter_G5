@@ -1,0 +1,13 @@
+package model;
+
+import javax.swing.JOptionPane;
+
+public class Menu {
+
+	private Object[] possibleValues = { "First", "Second", "Third" };
+
+	public void MenuStart() {
+		Object selectedValue = JOptionPane.showInputDialog(null, "Choose one", "Input", JOptionPane.INFORMATION_MESSAGE,
+				null, possibleValues, possibleValues[0]);
+	}
+}

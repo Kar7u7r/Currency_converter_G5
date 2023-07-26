@@ -1,0 +1,7 @@
+package testers;
+
+import java.awt.Menu;
+
+public class test extends Menu {
+
+}

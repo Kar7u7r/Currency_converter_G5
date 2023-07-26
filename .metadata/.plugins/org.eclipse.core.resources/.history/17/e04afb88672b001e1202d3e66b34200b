@@ -1,0 +1,31 @@
+package model;
+
+import javax.swing.JOptionPane;
+
+public class Converters extends Menu {
+	private String ProgramSelected;
+	private String InputValue;
+	private double InputDoubleValue;
+
+	public void ProgramSelector(String Selection) {
+		// TODO Auto-generated method stub
+		if (Selection == "CM to ---")
+			ProgramSelected = "Measurement";
+		else if (Selection == "Currency to ---")
+			ProgramSelected = "Currency";
+	}
+
+	public void InputValue() {
+		this.InputValue = JOptionPane.showInputDialog("Please input a value");
+		this.InputDoubleValue = Double.parseDouble(InputValue);
+	}
+
+	public Double getInputDoubleValue() {
+		return InputDoubleValue;
+	}
+	
+	public void ConverterSelected() {
+		if(InputDoubleValue != 0.0 && ProgramSelected =="Currency" )
+	}
+
+}

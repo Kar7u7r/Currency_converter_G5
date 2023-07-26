@@ -1,0 +1,4 @@
+INDEX VERSION 1.132+C:\Users\anian\OneDrive\Escritorio\converter_java\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+3441001813.index
+797148054.index

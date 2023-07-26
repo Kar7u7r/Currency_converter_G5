@@ -1,0 +1,9 @@
+package model;
+
+public class teste extends Menu{
+public static void main(String[] args) {
+	Menu m = new Menu();
+	m.MenuStart();
+	System.out.println(m.getMenuStart());
+}
+}

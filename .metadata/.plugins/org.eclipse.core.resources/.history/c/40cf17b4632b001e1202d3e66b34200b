@@ -1,0 +1,10 @@
+package testers;
+
+import java.awt.Menu;
+
+public class test extends Menu {
+	public static void main(String[] args) {
+		Menu m = new Menu();
+		
+	}
+}

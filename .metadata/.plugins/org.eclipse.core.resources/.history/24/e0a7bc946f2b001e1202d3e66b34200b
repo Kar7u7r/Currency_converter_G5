@@ -1,0 +1,22 @@
+package model;
+
+public class FinalProgram {
+
+	private Currency Currency = new Currency();
+	private Measurement Measurement = new Measurement();
+
+	public void FinalSelection(String SelectedValue, double DoubleValue) {
+		if (SelectedValue == "Currency Selected") {
+			Currency.CurrencyMenu(DoubleValue);
+			Result = Currency.getCurrencyMenu();
+		} else {
+			Measurement.MeasurementMenu(DoubleValue);
+			Result = Measurement.getMeasurementMenu();
+		}
+	}
+
+	public void result(String SelectedValue) {
+		System.out.println();
+		System.out.println();
+	}
+}

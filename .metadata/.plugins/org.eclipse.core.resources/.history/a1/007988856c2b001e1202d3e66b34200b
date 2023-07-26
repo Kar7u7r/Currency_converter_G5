@@ -1,0 +1,10 @@
+package model;
+
+public class FinalProgram extends Converters {
+
+	public void FinalSelection(String SelectedValue) {
+		if(SelectedValue=="Currency Selected")
+			
+		else
+	}
+}

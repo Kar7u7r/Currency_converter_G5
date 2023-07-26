@@ -1,0 +1,28 @@
+package model;
+
+import javax.swing.JOptionPane;
+
+public class Menu {
+
+	private Object[] possibleValues = { "Currency to ---", "CM to ---" };
+	private Object[] possibleValuesConverters = { "MXN to USD", "MXN to JP YEN", "MXN to EUR", "MXN to POUNDS", "MXN to WONS",
+			"USD to MXN", "JP YEN to MXN", "EUR to MXN", "POUNDS to MXN", "WONS to MXN"  };
+	private String OptionSelected;
+
+	public void MenuStart() {
+		Object selectedValue = JOptionPane.showInputDialog(null, "Choose one", "Input", JOptionPane.INFORMATION_MESSAGE,
+				null, possibleValues, possibleValues[0]);
+		this.OptionSelected = (String) selectedValue;
+	}
+	
+	public String getMenuStart() {
+		// TODO Auto-generated method stub
+		return OptionSelected;
+	}
+	
+	public void MenuCurrency() {
+		Object selectedValue = JOptionPane.showInputDialog(null, "Choose one", "Input", JOptionPane.INFORMATION_MESSAGE,
+				null, possibleValuesConverters, possibleValuesConverters[0]);
+		this.OptionSelected = (String) selectedValue;
+	}
+}

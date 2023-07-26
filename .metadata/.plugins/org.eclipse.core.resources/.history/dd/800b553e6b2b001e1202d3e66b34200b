@@ -1,0 +1,77 @@
+package model;
+
+public class Currency extends Menu {
+
+	private String CurrencyCon;
+	private double Convertedvalue;
+	private String Symbol;
+	private String inSymbol;
+
+	public void Currency(double DoubleValue) {
+		MenuCurrency();
+		CurrencyCon = getMenuCurrency();
+
+		if (CurrencyCon == null) {
+			CurrencyCon = "null";
+		}
+
+		switch (CurrencyCon) {
+		case "MXN to USD":
+			Convertedvalue = DoubleValue * .059;
+			inSymbol = "  $ ";
+			Symbol = " $";
+			break;
+		case "MXN to JP YEN":
+			Convertedvalue = 1 * 8.34;
+			inSymbol = "  ¥ ";
+			Symbol = " $";
+			break;
+		case "MXN to EUR":
+			Convertedvalue = getconverter() * .053;
+			inSymbol = "  € ";
+			Symbol = " $ ";
+			break;
+		case "MXN to POUNDS":
+			Convertedvalue = getconverter() * .046;
+			inSymbol = "  £ ";
+			Symbol = " $";
+			break;
+		case "MXN to WONS":
+			Convertedvalue = getconverter() * 75.63;
+			inSymbol = "  ₩ ";
+			Symbol = " $";
+			break;
+		case "USD to MXN":
+			Convertedvalue = getconverter() / .059;
+			Symbol = "  $";
+			inSymbol = " $ ";
+			break;
+		case "JP YEN to MXN":
+			Convertedvalue = getconverter() / 8.34;
+			Symbol = "  ¥";
+			inSymbol = " $ ";
+			break;
+		case "EUR to MXN":
+			Convertedvalue = getconverter() / .053;
+			Symbol = "  €";
+			inSymbol = " $ ";
+			break;
+		case "POUNDS to MXN":
+			Convertedvalue = getconverter() / .046;
+			Symbol = "  £";
+			inSymbol = " $ ";
+			break;
+		case "WONS to MXN":
+			Convertedvalue = getconverter() / 75.63;
+			Symbol = "  ₩";
+			inSymbol = " $ ";
+			break;
+		default:
+			FLCancel();
+			break;
+		}
+
+		JOptionPane.showInternalMessageDialog(null, "Your type of change will be for " + Symbol + " " + getconverter()
+				+ "  :  " + inSymbol + Convertedvalue, "information", JOptionPane.INFORMATION_MESSAGE);
+	}
+}

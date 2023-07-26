@@ -1,0 +1,9 @@
+package model;
+
+public class Converters extends Menu {
+	public void selector(String Selection) {
+		// TODO Auto-generated method stub
+		if(Selection == "CM to ---")
+			System.out.println("CM TO MEDIDAS");
+	}
+}

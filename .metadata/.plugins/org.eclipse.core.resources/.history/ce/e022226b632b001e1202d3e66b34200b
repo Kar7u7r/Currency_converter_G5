@@ -1,0 +1,9 @@
+package model;
+
+public class teste extends Menu{
+	Menu();@Override
+	public void MenuStart() {
+		// TODO Auto-generated method stub
+		super.MenuStart();
+	}
+}

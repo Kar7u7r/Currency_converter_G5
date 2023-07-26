@@ -1,0 +1,21 @@
+package model;
+
+import javax.swing.JOptionPane;
+
+public class Converters extends Menu {
+	
+	public void ProgramSelector(String Selection) {
+		// TODO Auto-generated method stub
+		if (Selection == "CM to ---")
+			System.out.println("CM TO MEDIDAS");
+		else if (Selection == "Currency to ---")
+			System.out.println("Currency TO DINERO");
+	}
+	public void InputValue() {
+		String inputValue = JOptionPane.showInputDialog("Please input a value");
+	}
+	private String getInputValue() {
+		// TODO Auto-generated method stub
+
+	}
+}

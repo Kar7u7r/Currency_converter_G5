@@ -1,0 +1,11 @@
+package model;
+
+public class FinalProgram  {
+
+	private Currency Currency = new Currency();
+	public void FinalSelection(String SelectedValue) {
+		if(SelectedValue=="Currency Selected")
+			
+		else
+	}
+}

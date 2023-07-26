@@ -1,0 +1,89 @@
+package model;
+
+public class Currency extends Menu {
+
+	private String CurrencyCon;
+	private double Convertedvalue;
+	private String Symbol;
+	private String inSymbol;
+
+	public void CurrencyMenu(double DoubleValue) {
+		MenuCurrency();
+		CurrencyCon = getMenuCurrency();
+
+		if (CurrencyCon == null) {
+			CurrencyCon = "null";
+		}
+
+		switch (CurrencyCon) {
+		case "MXN to USD":
+			Convertedvalue = DoubleValue * .059;
+			inSymbol = "  $ ";
+			Symbol = " $";
+			break;
+		case "MXN to JP YEN":
+			Convertedvalue = DoubleValue * 8.34;
+			inSymbol = "  ¥ ";
+			Symbol = " $";
+			break;
+		case "MXN to EUR":
+			Convertedvalue = DoubleValue * .053;
+			inSymbol = "  € ";
+			Symbol = " $ ";
+			break;
+		case "MXN to POUNDS":
+			Convertedvalue = DoubleValue * .046;
+			inSymbol = "  £ ";
+			Symbol = " $";
+			break;
+		case "MXN to WONS":
+			Convertedvalue = DoubleValue * 75.63;
+			inSymbol = "  ₩ ";
+			Symbol = " $";
+			break;
+		case "USD to MXN":
+			Convertedvalue = DoubleValue / .059;
+			Symbol = "  $";
+			inSymbol = " $ ";
+			break;
+		case "JP YEN to MXN":
+			Convertedvalue = DoubleValue / 8.34;
+			Symbol = "  ¥";
+			inSymbol = " $ ";
+			break;
+		case "EUR to MXN":
+			Convertedvalue = DoubleValue / .053;
+			Symbol = "  €";
+			inSymbol = " $ ";
+			break;
+		case "POUNDS to MXN":
+			Convertedvalue = DoubleValue / .046;
+			Symbol = "  £";
+			inSymbol = " $ ";
+			break;
+		case "WONS to MXN":
+			Convertedvalue = DoubleValue / 75.63;
+			Symbol = "  ₩";
+			inSymbol = " $ ";
+			break;
+		default:
+			Convertedvalue = DoubleValue;
+			break;
+		}
+
+	}
+
+	public double getCurrencyMenuValue() {
+		// TODO Auto-generated method stub
+		return Convertedvalue;
+	}
+	public String getCurrencySymbol() {
+		// TODO Auto-generated method stub
+		return Symbol;
+	}
+	
+	public String getCurrencyinSymbol() {
+		// TODO Auto-generated method stub
+		return inSymbol;
+	}
+}

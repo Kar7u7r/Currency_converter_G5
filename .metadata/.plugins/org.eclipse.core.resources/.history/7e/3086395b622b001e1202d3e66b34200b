@@ -1,0 +1,15 @@
+package model;
+
+import javax.swing.JOptionPane;
+
+public class Menu {
+
+	private Object[] possibleValues = { "Currency to ---", "CM to ---" };
+	private String OptionSelected;
+
+	public void MenuStart() {
+		Object selectedValue = JOptionPane.showInputDialog(null, "Choose one", "Input", JOptionPane.INFORMATION_MESSAGE,
+				null, possibleValues, possibleValues[0]);
+		
+	}
+}
