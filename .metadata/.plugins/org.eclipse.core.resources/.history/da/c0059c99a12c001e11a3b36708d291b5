@@ -29,9 +29,9 @@ public class Measurement extends Menu {
 
 		double[] data = { 100.0, 100000.0, 10.0, 2.54, 30.48, 10.0, 10.0, 100.0, 100000.0, 10.0, 2.54, 30.48 };
 
-		String[] fS1 = { " CM", " CM", " CM", " CM", " CM", " Mm", " CM", " Mt", " Km", " Dm", " Inch", " Foot" };
-		String[] fS2 = { " Mt", " Km", " Dm", " Inch", " Foot", " CM", " Mm", " CM", " CM", " CM", " CM", " CM" };
-		// 4 = CM Inch 7 CM Mm
+		String[] fS1 = { "1", "2", "3", "4", "5", "6", "CM", "8", "9", "10", "11", "12" };
+		String[] fS2 = { "1", "2", "3", "4", "5", "6", "Mm", "8", "9", "10", "11", "12" };
+
 		HashMap<String, Double> measurement = new HashMap<>();
 		// double tiemmpo = System.nanoTime();
 		int x = 0;
@@ -42,12 +42,14 @@ public class Measurement extends Menu {
 		String option = getMenuMeasurement();
 		double value = measurement.get(option);
 
-		String variabletofind = option;
+		String variableABuscar = option;
+
 		// Usamos un bucle for para buscar la variable en el array
 		int index = -1; // Inicializamos el índice con un valor que indique que la variable no se
+						// encontró
 
 		for (int b = 0; b < measurements.length; b++) {
-			if (measurements[b] == variabletofind) {
+			if (measurements[b] == variableABuscar) {
 				index = b; // Si encontramos la variable, actualizamos el índice y salimos del bucle
 				break;
 			}
@@ -65,17 +67,21 @@ public class Measurement extends Menu {
 				// multi
 				result = doubleValue * value;
 		}
+
 	}
 
 	public double getMeasurementMenuValue() {
+		// TODO Auto-generated method stub
 		return result;
 	}
 
 	public String getMeasurementSymbol() {
+		// TODO Auto-generated method stub
 		return s1;
 	}
 
 	public String getMeasurementinSymbol() {
+		// TODO Auto-generated method stub
 		return s2;
 	}
 

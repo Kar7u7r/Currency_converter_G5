@@ -4,8 +4,8 @@ import java.util.HashMap;
 
 public class Measurement extends Menu {
 	private double result;
-	private String val;
-	private String val2;
+	private String val = null;
+	private String val2 = null;
 	private String[] division = { "CM to Mt", "CM to Km", "CM to Dm", "CM to Inch", "CM to Foot", "Mm to CM" };
 	private String[] multiplication = { "CM to Mm", "Mt to CM", "Km to CM", "Dm to CM", "Inch to Cm", "Foot to CM" };
 	private int totalLenght = division.length + multiplication.length;
@@ -20,7 +20,7 @@ public class Measurement extends Menu {
 			Closed();
 			System.exit(0);
 		}
-		// ingresa los daots de div y mult a measurements
+
 		for (int i = 0; i < division.length; i++)
 			measurements[i] = division[i];
 
@@ -29,9 +29,9 @@ public class Measurement extends Menu {
 
 		double[] data = { 100.0, 100000.0, 10.0, 2.54, 30.48, 10.0, 10.0, 100.0, 100000.0, 10.0, 2.54, 30.48 };
 
-		String[] fS1 = { " CM", " CM", " CM", " CM", " CM", " Mm", " CM", " Mt", " Km", " Dm", " Inch", " Foot" };
-		String[] fS2 = { " Mt", " Km", " Dm", " Inch", " Foot", " CM", " Mm", " CM", " CM", " CM", " CM", " CM" };
-		// 4 = CM Inch 7 CM Mm
+//		String[] fS1 = { "CM", "CM", "CM", "CM", "CM", "CM", "Mt", "Km", "Dm", "Mm", "Inch", "Foot" };
+//		String[] fS2 = { "Mt", "Km", "Dm", "Mm", "Inch", "Foot", "CM", "CM", "CM", "CM", "CM", "CM" };
+
 		HashMap<String, Double> measurement = new HashMap<>();
 		// double tiemmpo = System.nanoTime();
 		int x = 0;
@@ -42,19 +42,8 @@ public class Measurement extends Menu {
 		String option = getMenuMeasurement();
 		double value = measurement.get(option);
 
-		String variabletofind = option;
-		// Usamos un bucle for para buscar la variable en el array
-		int index = -1; // Inicializamos el índice con un valor que indique que la variable no se
-
-		for (int b = 0; b < measurements.length; b++) {
-			if (measurements[b] == variabletofind) {
-				index = b; // Si encontramos la variable, actualizamos el índice y salimos del bucle
-				break;
-			}
-		}
-		s1 = fS1[index];
-		s2 = fS2[index];
-
+//		for(int v = 0;v < fS1.length;v++)
+		
 		for (int z = 0, y = 0; z < division.length; z++, y++) {
 			val = division[z];
 			val2 = multiplication[y];
@@ -65,17 +54,20 @@ public class Measurement extends Menu {
 				// multi
 				result = doubleValue * value;
 		}
+
 	}
 
 	public double getMeasurementMenuValue() {
+		// TODO Auto-generated method stub
 		return result;
 	}
-
 	public String getMeasurementSymbol() {
+		// TODO Auto-generated method stub
 		return s1;
 	}
 
 	public String getMeasurementinSymbol() {
+		// TODO Auto-generated method stub
 		return s2;
 	}
 
