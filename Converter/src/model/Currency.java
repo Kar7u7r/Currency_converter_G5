@@ -9,6 +9,10 @@ public class Currency extends Menu {
 
 	public void CurrencyMenu(double DoubleValue) {
 		MenuCurrency();
+		if (getMenuCurrency() == null) {
+			Closed();
+			System.exit(0);
+		}
 		CurrencyCon = getMenuCurrency();
 
 		if (CurrencyCon == null) {

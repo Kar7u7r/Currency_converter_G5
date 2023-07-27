@@ -7,6 +7,7 @@ public class Converters extends Menu {
 	private String InputValue;
 	private double InputDoubleValue;
 	private String Active;
+	private boolean valor;
 
 	public void ProgramSelector(String Selection) {
 		// TODO Auto-generated method stub
@@ -14,6 +15,10 @@ public class Converters extends Menu {
 			this.ProgramSelected = "Measurement";
 		else if (Selection == "Currency to ---")
 			this.ProgramSelected = "Currency";
+		else {
+			Closed();
+			System.exit(0);
+		}
 	}
 
 	public String getProgramSelector() {
@@ -22,8 +27,26 @@ public class Converters extends Menu {
 	}
 
 	public void InputValue() {
-		this.InputValue = JOptionPane.showInputDialog("Please input a value");
-		this.InputDoubleValue = Double.parseDouble(InputValue);
+		do {
+			this.InputValue = JOptionPane.showInputDialog("Please input a value");
+			try {
+				valor = InputValue.isEmpty();
+			} catch (Exception e) {
+				System.out.println("isEmpty never recived a value");
+			}
+			if (valor)
+				IsEmpty();
+		} while (valor);
+		if (InputValue == null) {
+			Closed();
+			System.exit(0);
+		}
+		try {
+			this.InputDoubleValue = Double.parseDouble(InputValue);
+		} catch (NumberFormatException e) {
+			IsEmpty();
+			InputValue();
+		}
 	}
 
 	public Double getInputDoubleValue() {
@@ -31,9 +54,9 @@ public class Converters extends Menu {
 	}
 
 	public void ConverterSelected(String ProgramSelected, Double InputDoubleValue) {
-		if (this.InputDoubleValue != 0.0 && this.ProgramSelected == "Currency")
+		if (this.InputDoubleValue != 0.0 && ProgramSelected == "Currency")
 			this.Active = "Currency Selected";
-		else if (this.InputDoubleValue != 0.0 && this.ProgramSelected == "Measurement")
+		else if (this.InputDoubleValue != 0.0 && ProgramSelected == "Measurement")
 			this.Active = "Measurement Selected";
 	}
 

@@ -8,22 +8,30 @@ public class Measurement extends Menu {
 	private String val2 = null;
 	private String[] cm = { "CM to Mt", "CM to Km", "CM to Dm", "CM to Inch", "CM to Foot", "Mm to CM" };
 	private String[] to = { "Mt to CM", "Km to CM", "Dm to CM", "Inch to Cm", "Foot to CM", "CM to Mm" };
+	private String Sim;
+	private String Sim2;
+
 	public void MeasurementMenu(double DoubleValue) {
-		
+
 		MenuMeasurement();
-		
+		if (getMenuMeasurement() == null) {
+			Closed();
+			System.exit(0);
+		}
 		String[] Metrics = { "CM to Mt", "CM to Km", "CM to Dm", "CM to Mm", "CM to Inch", "CM to Foot", "Mt to CM",
 				"Km to CM", "Dm to CM", "Mm to CM", "Inch to Cm", "Foot to CM" };
 		double[] Data = { 100.0, 100000.0, 10.0, 10.0, 2.54, 30.48, 100.0, 100000.0, 10.0, 10.0, 2.54, 30.48 };
-		
-		String[] FS1 = {"CM","CM","CM","CM","CM","CM","Mt","Km","Dm","Mm","Inch","Foot"};
-		String[] FS2 = {"Mt","Km","Dm","Mm","Inch","Foot","CM","CM","CM","CM","CM","CM"};
+
+		String[] FS1 = { "CM", "CM", "CM", "CM", "CM", "CM", "Mt", "Km", "Dm", "Mm", "Inch", "Foot" };
+		String[] FS2 = { "Mt", "Km", "Dm", "Mm", "Inch", "Foot", "CM", "CM", "CM", "CM", "CM", "CM" };
 
 		HashMap<String, Double> Metric = new HashMap<>();
 		// double tiemmpo = System.nanoTime();
 		int i = 0;
-		for (var metric : Metrics)
+		for (var metric : Metrics) {
 			Metric.put(metric, Data[i++]);
+
+		}
 
 		String Option = getMenuMeasurement();
 		double value = Metric.get(Option);
@@ -32,15 +40,18 @@ public class Measurement extends Menu {
 			val = cm[x];
 			val2 = to[y];
 			if (val == Option)
-				//division
-				result =  DoubleValue/ value;
+				// division
+				result = DoubleValue / value;
 			else if (val2 == Option)
-				//multi
+				// multi
 				result = DoubleValue * value;
+
 		}
 	}
+
 	public double getMeasurementMenuValue() {
 		// TODO Auto-generated method stub
 		return result;
 	}
+
 }

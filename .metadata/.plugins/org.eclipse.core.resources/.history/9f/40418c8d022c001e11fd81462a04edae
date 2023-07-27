@@ -1,0 +1,60 @@
+package model;
+
+import javax.swing.JOptionPane;
+
+public class Converters extends Menu {
+	private String ProgramSelected;
+	private String InputValue;
+	private double InputDoubleValue;
+	private String Active;
+
+	public void ProgramSelector(String Selection) {
+		// TODO Auto-generated method stub
+		if (Selection == "CM to ---")
+			this.ProgramSelected = "Measurement";
+		else if (Selection == "Currency to ---")
+			this.ProgramSelected = "Currency";
+		else
+			System.exit(0);
+	}
+
+	public String getProgramSelector() {
+		// TODO Auto-generated method stub
+		return ProgramSelected;
+	}
+
+	public void InputValue() {
+		try {
+			do
+			this.InputValue = JOptionPane.showInputDialog("Please input a value");
+			if(InputValue.isEmpty())
+				isEmpty();
+			while(InputValue.isEmpty());
+			if (InputValue == null)
+				System.exit(0);
+			this.InputDoubleValue = Double.parseDouble(InputValue);
+
+		} catch (NumberFormatException e) {
+
+		}
+	}
+
+	public Double getInputDoubleValue() {
+		return InputDoubleValue;
+	}
+
+	public void ConverterSelected(String ProgramSelected, Double InputDoubleValue) {
+		if (this.InputDoubleValue != 0.0 && ProgramSelected == "Currency")
+			this.Active = "Currency Selected";
+		else if (this.InputDoubleValue != 0.0 && ProgramSelected == "Measurement")
+			this.Active = "Measurement Selected";
+		else
+			Active = "none";
+		// reiniciar asaaa
+	}
+
+	public String getConverterSelected() {
+		// TODO Auto-generated method stub
+		return Active;
+	}
+}

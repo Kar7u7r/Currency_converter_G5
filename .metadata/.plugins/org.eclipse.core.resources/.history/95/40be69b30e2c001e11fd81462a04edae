@@ -1,0 +1,17 @@
+package model;
+
+public class program {
+	Menu m = new Menu();
+	Converters c = new Converters();
+	Selection f = new Selection();
+	  public void ResetProgram(){
+		 m.MenuStart();
+			c.ProgramSelector(m.getMenuStart());
+			c.InputValue();
+			c.ConverterSelected(c.getProgramSelector(), c.getInputDoubleValue());
+			f.FinalSelection(c.getConverterSelected(), c.getInputDoubleValue());
+			m.result(f.getFinaSelection(), c.getInputDoubleValue(), f.getFS1(), f.getFS2());
+			m.Anewprogram();
+	 }
+	
+}

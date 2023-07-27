@@ -14,6 +14,8 @@ public class Menu {
 	private String OptionSelectedCurrency;
 	private String OptionSelectedMeasurement;
 
+	private boolean RS;
+
 	public void MenuStart() {
 		Object selectedValue = JOptionPane.showInputDialog(null, "Choose one", "Input", JOptionPane.INFORMATION_MESSAGE,
 				null, possibleValues, possibleValues[0]);
@@ -48,7 +50,28 @@ public class Menu {
 	}
 
 	public void result(double result, double OValue, String FS1, String FS2) {
-		JOptionPane.showInternalMessageDialog(null, "The Result is: " + OValue + FS1 +" to "+ result+ FS2, "information",
+		JOptionPane.showInternalMessageDialog(null, "The Result is: " + OValue + FS1 + " to " + result + FS2,
+				"information", JOptionPane.INFORMATION_MESSAGE);
+	}
+
+	public void IsEmpty() {
+		// TODO Auto-generated method stub
+		JOptionPane.showInternalMessageDialog(null, "Is empty or not a number", "information",
 				JOptionPane.INFORMATION_MESSAGE);
+	}
+
+	public void Closed() {
+		// TODO Auto-generated method stub
+		JOptionPane.showInternalMessageDialog(null, "You have closed the program bye!", "information",
+				JOptionPane.INFORMATION_MESSAGE);
+	}
+
+	public boolean Anewprogram() {
+		int Reset = JOptionPane.showConfirmDialog(null, "Do you want to Start a new program?", "choose one", JOptionPane.YES_NO_OPTION);
+		if (Reset == JOptionPane.YES_OPTION)
+			RS = true;
+		else if (Reset == JOptionPane.NO_OPTION)
+			RS = false;
+		return RS;
 	}
 }
