@@ -14,7 +14,7 @@ public class Menu {
 	private String optionSelectedCurrency;
 	private String optionSelectedMeasurement;
 
-	private boolean rS;
+	private boolean RS;
 
 	public void MenuStart() {
 		Object selectedValue = JOptionPane.showInputDialog(null, "Choose one", "Input", JOptionPane.INFORMATION_MESSAGE,
@@ -69,9 +69,9 @@ public class Menu {
 	public boolean Anewprogram() {
 		int Reset = JOptionPane.showConfirmDialog(null, "Do you want to Start a new program?", "choose one", JOptionPane.YES_NO_OPTION);
 		if (Reset == JOptionPane.YES_OPTION)
-			rS = true;
+			RS = true;
 		else if (Reset == JOptionPane.NO_OPTION)
-			rS = false;
-		return rS;
+			RS = false;
+		return RS;
 	}
 }

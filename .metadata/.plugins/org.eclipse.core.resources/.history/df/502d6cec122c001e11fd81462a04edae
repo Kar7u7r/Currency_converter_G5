@@ -5,20 +5,20 @@ public class Selection {
 
 	private Currency Currency = new Currency();
 	private Measurement Measurement = new Measurement();
-	private double answer;
+	private double result;
 	private String fS1;
 	private String fS2;
 
 	public void FinalSelection(String SelectedValue, double DoubleValue) {
 		if (SelectedValue == "Currency Selected") {
 			Currency.CurrencyMenu(DoubleValue);
-			answer = Currency.getCurrencyMenuValue();
+			result = Currency.getCurrencyMenuValue();
 			fS1 = Currency.getCurrencySymbol();
 			fS2 = Currency.getCurrencyinSymbol();
 
 		} else if (SelectedValue == "Measurement Selected") {
 			Measurement.MeasurementMenu(DoubleValue);
-			answer = Measurement.getMeasurementMenuValue();
+			result = Measurement.getMeasurementMenuValue();
 	//	FS1 = "";
 		//	FS2 = "";
 		}
@@ -26,7 +26,7 @@ public class Selection {
 
 	public double getFinaSelection() {
 		// TODO Auto-generated method stub
-		return answer;
+		return result;
 	}
 
 	public String getFS1() {

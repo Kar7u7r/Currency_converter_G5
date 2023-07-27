@@ -10,43 +10,43 @@ public class Menu {
 	private Object[] possibleValuesMeasurement = { "CM to Mt", "CM to Km", "CM to Dm", "CM to Mm", "CM to Inch",
 			"CM to Foot", "Mt to CM", "Km to CM", "Dm to CM", "Mm to CM", "Inch to Cm", "Foot to CM" };
 
-	private String optionSelected;
-	private String optionSelectedCurrency;
-	private String optionSelectedMeasurement;
+	private String OptionSelected;
+	private String OptionSelectedCurrency;
+	private String OptionSelectedMeasurement;
 
-	private boolean rS;
+	private boolean RS;
 
 	public void MenuStart() {
 		Object selectedValue = JOptionPane.showInputDialog(null, "Choose one", "Input", JOptionPane.INFORMATION_MESSAGE,
 				null, possibleValues, possibleValues[0]);
-		this.optionSelected = (String) selectedValue;
+		this.OptionSelected = (String) selectedValue;
 	}
 
 	public String getMenuStart() {
 		// TODO Auto-generated method stub
-		return optionSelected;
+		return OptionSelected;
 	}
 
 	public void MenuCurrency() {
 		Object selectedValue = JOptionPane.showInputDialog(null, "Choose one", "Input", JOptionPane.INFORMATION_MESSAGE,
 				null, possibleValuesCurrency, possibleValuesCurrency[0]);
-		this.optionSelectedCurrency = (String) selectedValue;
+		this.OptionSelectedCurrency = (String) selectedValue;
 	}
 
 	public String getMenuCurrency() {
 		// TODO Auto-generated method stub
-		return optionSelectedCurrency;
+		return OptionSelectedCurrency;
 	}
 
 	public void MenuMeasurement() {
 		Object selectedValue = JOptionPane.showInputDialog(null, "Choose one", "Input", JOptionPane.INFORMATION_MESSAGE,
 				null, possibleValuesMeasurement, possibleValuesMeasurement[0]);
-		this.optionSelectedMeasurement = (String) selectedValue;
+		this.OptionSelectedMeasurement = (String) selectedValue;
 	}
 
 	public String getMenuMeasurement() {
 		// TODO Auto-generated method stub
-		return optionSelectedMeasurement;
+		return OptionSelectedMeasurement;
 	}
 
 	public void result(double result, double OValue, String FS1, String FS2) {
@@ -69,9 +69,9 @@ public class Menu {
 	public boolean Anewprogram() {
 		int Reset = JOptionPane.showConfirmDialog(null, "Do you want to Start a new program?", "choose one", JOptionPane.YES_NO_OPTION);
 		if (Reset == JOptionPane.YES_OPTION)
-			rS = true;
+			RS = true;
 		else if (Reset == JOptionPane.NO_OPTION)
-			rS = false;
-		return rS;
+			RS = false;
+		return RS;
 	}
 }

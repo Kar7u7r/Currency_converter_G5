@@ -16,8 +16,6 @@ public class program {
 			f.FinalSelection(c.getConverterSelected(), c.getInputDoubleValue());
 			m.result(f.getFinaSelection(), c.getInputDoubleValue(), f.getFS1(), f.getFS2());
 			reset = m.Anewprogram();
-		} while (reset);
-		if (reset==false)
-			m.Closed();
+		} while (reset);		
 	}
 }

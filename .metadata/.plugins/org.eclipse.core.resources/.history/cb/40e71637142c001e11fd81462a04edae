@@ -5,6 +5,6 @@ public class test extends Converters {
 		program p = new program();
 		Menu m = new Menu();
 		p.Firstprogram();
-		//p.ResetProgram(m.Anewprogram());
+		p.ResetProgram(m.Anewprogram());
 	}
 }

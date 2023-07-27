@@ -18,34 +18,34 @@ public class Measurement extends Menu {
 			Closed();
 			System.exit(0);
 		}
-		String[] metrics = { "CM to Mt", "CM to Km", "CM to Dm", "CM to Mm", "CM to Inch", "CM to Foot", "Mt to CM",
+		String[] Metrics = { "CM to Mt", "CM to Km", "CM to Dm", "CM to Mm", "CM to Inch", "CM to Foot", "Mt to CM",
 				"Km to CM", "Dm to CM", "Mm to CM", "Inch to Cm", "Foot to CM" };
-		double[] data = { 100.0, 100000.0, 10.0, 10.0, 2.54, 30.48, 100.0, 100000.0, 10.0, 10.0, 2.54, 30.48 };
+		double[] Data = { 100.0, 100000.0, 10.0, 10.0, 2.54, 30.48, 100.0, 100000.0, 10.0, 10.0, 2.54, 30.48 };
 
-		String[] fS1 = { "CM", "CM", "CM", "CM", "CM", "CM", "Mt", "Km", "Dm", "Mm", "Inch", "Foot" };
-		String[] fS2 = { "Mt", "Km", "Dm", "Mm", "Inch", "Foot", "CM", "CM", "CM", "CM", "CM", "CM" };
+		String[] FS1 = { "CM", "CM", "CM", "CM", "CM", "CM", "Mt", "Km", "Dm", "Mm", "Inch", "Foot" };
+		String[] FS2 = { "Mt", "Km", "Dm", "Mm", "Inch", "Foot", "CM", "CM", "CM", "CM", "CM", "CM" };
 
-		HashMap<String, Double> metric = new HashMap<>();
+		HashMap<String, Double> Metric = new HashMap<>();
 		// double tiemmpo = System.nanoTime();
 		int i = 0;
-		for (var Metric : metrics) {
+		for (var metric : Metrics) {
 		
-			metric.put(Metric, data[i++]);
+			Metric.put(metric, Data[i++]);
 
 		}
 
-		String option = getMenuMeasurement();
-		double value = metric.get(option);
+		String Option = getMenuMeasurement();
+		double value = Metric.get(Option);
 
 		for (int x = 0, y = 0; x < cm.length; x++, y++) {
 			val = cm[x];
 			val2 = to[y];
-			if (val == option)
+			if (val == Option)
 				// division
-				result = doubleValue / value;
-			else if (val2 == option)
+				result = DoubleValue / value;
+			else if (val2 == Option)
 				// multi
-				result = doubleValue * value;
+				result = DoubleValue * value;
 
 		}
 	}

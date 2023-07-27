@@ -8,6 +8,7 @@ public class program {
 
 	public void Firstprogram() {
 
+		
 		do {
 			m.MenuStart();
 			c.ProgramSelector(m.getMenuStart());
@@ -17,7 +18,7 @@ public class program {
 			m.result(f.getFinaSelection(), c.getInputDoubleValue(), f.getFS1(), f.getFS2());
 			reset = m.Anewprogram();
 		} while (reset);
-		if (reset==false)
-			m.Closed();
+		if (reset == false)
+			System.exit(0);
 	}
 }

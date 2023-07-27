@@ -44,7 +44,6 @@ public class Converters extends Menu {
 		try {
 			this.inputDoubleValue = Double.parseDouble(inputValue);
 		} catch (NumberFormatException e) {
-			System.out.println("The value was a String not a Number");
 			IsEmpty();
 			InputValue();
 		}

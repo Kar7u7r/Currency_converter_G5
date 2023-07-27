@@ -3,18 +3,18 @@ package model;
 import javax.swing.JOptionPane;
 
 public class Converters extends Menu {
-	private String programSelected;
-	private String inputValue;
-	private double inputDoubleValue;
-	private String active;
+	private String ProgramSelected;
+	private String InputValue;
+	private double InputDoubleValue;
+	private String Active;
 	private boolean valor;
 
 	public void ProgramSelector(String Selection) {
 		// TODO Auto-generated method stub
 		if (Selection == "CM to ---")
-			this.programSelected = "Measurement";
+			this.ProgramSelected = "Measurement";
 		else if (Selection == "Currency to ---")
-			this.programSelected = "Currency";
+			this.ProgramSelected = "Currency";
 		else {
 			Closed();
 			System.exit(0);
@@ -23,46 +23,45 @@ public class Converters extends Menu {
 
 	public String getProgramSelector() {
 		// TODO Auto-generated method stub
-		return programSelected;
+		return ProgramSelected;
 	}
 
 	public void InputValue() {
 		do {
-			this.inputValue = JOptionPane.showInputDialog("Please input a value");
+			this.InputValue = JOptionPane.showInputDialog("Please input a value");
 			try {
-				valor = inputValue.isEmpty();
+				valor = InputValue.isEmpty();
 			} catch (Exception e) {
 				System.out.println("isEmpty never recived a value");
 			}
 			if (valor)
 				IsEmpty();
 		} while (valor);
-		if (inputValue == null) {
+		if (InputValue == null) {
 			Closed();
 			System.exit(0);
 		}
 		try {
-			this.inputDoubleValue = Double.parseDouble(inputValue);
+			this.InputDoubleValue = Double.parseDouble(InputValue);
 		} catch (NumberFormatException e) {
-			System.out.println("The value was a String not a Number");
 			IsEmpty();
 			InputValue();
 		}
 	}
 
 	public Double getInputDoubleValue() {
-		return inputDoubleValue;
+		return InputDoubleValue;
 	}
 
 	public void ConverterSelected(String ProgramSelected, Double InputDoubleValue) {
-		if (this.inputDoubleValue != 0.0 && ProgramSelected == "Currency")
-			this.active = "Currency Selected";
-		else if (this.inputDoubleValue != 0.0 && ProgramSelected == "Measurement")
-			this.active = "Measurement Selected";
+		if (this.InputDoubleValue != 0.0 && ProgramSelected == "Currency")
+			this.Active = "Currency Selected";
+		else if (this.InputDoubleValue != 0.0 && ProgramSelected == "Measurement")
+			this.Active = "Measurement Selected";
 	}
 
 	public String getConverterSelected() {
 		// TODO Auto-generated method stub
-		return active;
+		return Active;
 	}
 }

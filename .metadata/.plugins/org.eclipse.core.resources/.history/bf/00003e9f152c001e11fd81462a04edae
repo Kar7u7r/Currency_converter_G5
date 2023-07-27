@@ -67,11 +67,14 @@ public class Menu {
 	}
 
 	public boolean Anewprogram() {
-		int Reset = JOptionPane.showConfirmDialog(null, "Do you want to Start a new program?", "choose one", JOptionPane.YES_NO_OPTION);
+		int Reset = JOptionPane.showConfirmDialog(null, "Do you want to Start a new program?", "choose one",
+				JOptionPane.YES_NO_OPTION);
 		if (Reset == JOptionPane.YES_OPTION)
 			rS = true;
-		else if (Reset == JOptionPane.NO_OPTION)
+		else if (Reset == JOptionPane.NO_OPTION) {
 			rS = false;
+			System.exit(0);
+		}
 		return rS;
 	}
 }

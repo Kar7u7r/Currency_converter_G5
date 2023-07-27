@@ -2,9 +2,9 @@ package model;
 
 public class Currency extends Menu {
 
-	private String currencyCon;
-	private double convertedvalue;
-	private String symbol;
+	private String CurrencyCon;
+	private double Convertedvalue;
+	private String Symbol;
 	private String inSymbol;
 
 	public void CurrencyMenu(double DoubleValue) {
@@ -13,65 +13,65 @@ public class Currency extends Menu {
 			Closed();
 			System.exit(0);
 		}
-		currencyCon = getMenuCurrency();
+		CurrencyCon = getMenuCurrency();
 
-		if (currencyCon == null) {
-			currencyCon = "null";
+		if (CurrencyCon == null) {
+			CurrencyCon = "null";
 		}
 
-		switch (currencyCon) {
+		switch (CurrencyCon) {
 		case "MXN to USD":
-			convertedvalue = DoubleValue * .059;
+			Convertedvalue = DoubleValue * .059;
 			inSymbol = "  $ ";
-			symbol = " $";
+			Symbol = " $";
 			break;
 		case "MXN to JP YEN":
-			convertedvalue = DoubleValue * 8.34;
+			Convertedvalue = DoubleValue * 8.34;
 			inSymbol = "  ¥ ";
-			symbol = " $";
+			Symbol = " $";
 			break;
 		case "MXN to EUR":
-			convertedvalue = DoubleValue * .053;
+			Convertedvalue = DoubleValue * .053;
 			inSymbol = "  € ";
-			symbol = " $ ";
+			Symbol = " $ ";
 			break;
 		case "MXN to POUNDS":
-			convertedvalue = DoubleValue * .046;
+			Convertedvalue = DoubleValue * .046;
 			inSymbol = "  £ ";
-			symbol = " $";
+			Symbol = " $";
 			break;
 		case "MXN to WONS":
-			convertedvalue = DoubleValue * 75.63;
+			Convertedvalue = DoubleValue * 75.63;
 			inSymbol = "  ₩ ";
-			symbol = " $";
+			Symbol = " $";
 			break;
 		case "USD to MXN":
-			convertedvalue = DoubleValue / .059;
-			symbol = "  $";
+			Convertedvalue = DoubleValue / .059;
+			Symbol = "  $";
 			inSymbol = " $ ";
 			break;
 		case "JP YEN to MXN":
-			convertedvalue = DoubleValue / 8.34;
-			symbol = "  ¥";
+			Convertedvalue = DoubleValue / 8.34;
+			Symbol = "  ¥";
 			inSymbol = " $ ";
 			break;
 		case "EUR to MXN":
-			convertedvalue = DoubleValue / .053;
-			symbol = "  €";
+			Convertedvalue = DoubleValue / .053;
+			Symbol = "  €";
 			inSymbol = " $ ";
 			break;
 		case "POUNDS to MXN":
-			convertedvalue = DoubleValue / .046;
-			symbol = "  £";
+			Convertedvalue = DoubleValue / .046;
+			Symbol = "  £";
 			inSymbol = " $ ";
 			break;
 		case "WONS to MXN":
-			convertedvalue = DoubleValue / 75.63;
-			symbol = "  ₩";
+			Convertedvalue = DoubleValue / 75.63;
+			Symbol = "  ₩";
 			inSymbol = " $ ";
 			break;
 		default:
-			convertedvalue = DoubleValue;
+			Convertedvalue = DoubleValue;
 			break;
 		}
 
@@ -79,12 +79,12 @@ public class Currency extends Menu {
 
 	public double getCurrencyMenuValue() {
 		// TODO Auto-generated method stub
-		return convertedvalue;
+		return Convertedvalue;
 	}
 
 	public String getCurrencySymbol() {
 		// TODO Auto-generated method stub
-		return symbol;
+		return Symbol;
 	}
 
 	public String getCurrencyinSymbol() {

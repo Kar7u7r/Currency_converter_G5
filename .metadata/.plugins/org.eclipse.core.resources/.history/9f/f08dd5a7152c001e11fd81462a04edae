@@ -18,6 +18,5 @@ public class program {
 			reset = m.Anewprogram();
 		} while (reset);
 		if (reset==false)
-			m.Closed();
 	}
 }
