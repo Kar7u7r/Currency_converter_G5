@@ -11,10 +11,10 @@ public class Converters extends Menu {
 
 	public void ProgramSelector(String Selection) {
 		// TODO Auto-generated method stub
-		if (Selection == "CM to ---")
-			this.programSelected = "Measurement";
-		else if (Selection == "Currency to ---")
+		if (Selection == "Currency")
 			this.programSelected = "Currency";
+		else if (Selection == "Measurements")
+			this.programSelected = "Measurement";
 		else {
 			Closed();
 			System.exit(0);
@@ -27,6 +27,7 @@ public class Converters extends Menu {
 	}
 
 	public void InputValue() {
+
 		do {
 			this.inputValue = JOptionPane.showInputDialog("Please input a value");
 			try {
@@ -34,13 +35,13 @@ public class Converters extends Menu {
 			} catch (Exception e) {
 				System.out.println("isEmpty never recived a value");
 			}
-			if (valor)
+			if (inputValue == null) {
+				Closed();
+				System.exit(0);
+			} else if (valor)
 				IsEmpty();
+
 		} while (valor);
-		if (inputValue == null) {
-			Closed();
-			System.exit(0);
-		}
 		try {
 			this.inputDoubleValue = Double.parseDouble(inputValue);
 		} catch (NumberFormatException e) {

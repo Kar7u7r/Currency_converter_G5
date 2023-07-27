@@ -19,8 +19,8 @@ public class Selection {
 		} else if (SelectedValue == "Measurement Selected") {
 			Measurement.MeasurementMenu(DoubleValue);
 			answer = Measurement.getMeasurementMenuValue();
-	//	FS1 = "";
-		//	FS2 = "";
+				fS1 = Measurement.getMeasurementSymbol();
+				fS2 = Measurement.getMeasurementinSymbol();
 		}
 	}
 

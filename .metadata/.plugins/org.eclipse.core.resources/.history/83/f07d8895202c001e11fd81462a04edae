@@ -1,0 +1,69 @@
+package model;
+
+import java.util.HashMap;
+
+public class Measurement extends Menu {
+	private double result;
+	private String val = null;
+	private String val2 = null;
+	private String[] division = { "CM to Mt", "CM to Km", "CM to Dm", "CM to Inch", "CM to Foot", "Mm to CM" };
+	private String[] multiplication = { "CM to Mm", "Mt to CM", "Km to CM", "Dm to CM", "Inch to Cm", "Foot to CM" };
+	private String sim;
+	private String sim2;
+	int totalLenght = division.length + multiplication.length;
+	String[] measurements = new String[totalLenght];
+
+	public void MeasurementMenu(double doubleValue) {
+
+		MenuMeasurement();
+		if (getMenuMeasurement() == null) {
+			Closed();
+			System.exit(0);
+		}
+
+		for (int i = 0; i < division.length; i++) {
+			measurements[i] = division[i];
+		}
+
+		for (int i = 0; i < multiplication.length; i++) {
+			measurements[division.length + i] = multiplication[i];
+
+			String[] measurements = { "CM to Mt", "CM to Km", "CM to Dm", "CM to Mm", "CM to Inch", "CM to Foot",
+					"Mt to CM", "Km to CM", "Dm to CM", "Mm to CM", "Inch to Cm", "Foot to CM" };
+			double[] data = { 100.0, 100000.0, 10.0, 10.0, 2.54, 30.48, 100.0, 100000.0, 10.0, 10.0, 2.54, 30.48 };
+
+			String[] fS1 = { "CM", "CM", "CM", "CM", "CM", "CM", "Mt", "Km", "Dm", "Mm", "Inch", "Foot" };
+			String[] fS2 = { "Mt", "Km", "Dm", "Mm", "Inch", "Foot", "CM", "CM", "CM", "CM", "CM", "CM" };
+
+			HashMap<String, Double> metric = new HashMap<>();
+			// double tiemmpo = System.nanoTime();
+			int x = 0;
+			for (var Metric : measurements) {
+
+				metric.put(Metric, data[x++]);
+
+			}
+
+			String option = getMenuMeasurement();
+			double value = metric.get(option);
+
+			for (int z = 0, y = 0; z < division.length; z++, y++) {
+				val = division[z];
+				val2 = multiplication[y];
+				if (val == option)
+					// division
+					result = doubleValue / value;
+				else if (val2 == option)
+					// multi
+					result = doubleValue * value;
+
+			}
+		}
+	}
+
+	public double getMeasurementMenuValue() {
+		// TODO Auto-generated method stub
+		return result;
+	}
+
+}

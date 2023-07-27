@@ -4,7 +4,7 @@ import javax.swing.JOptionPane;
 
 public class Menu {
 
-	private Object[] possibleValues = { "Currency to ---", "CM to ---" };
+	private Object[] possibleValues = { "Currency", "Measurements" };
 	private Object[] possibleValuesCurrency = { "MXN to USD", "MXN to JP YEN", "MXN to EUR", "MXN to POUNDS",
 			"MXN to WONS", "USD to MXN", "JP YEN to MXN", "EUR to MXN", "POUNDS to MXN", "WONS to MXN" };
 	private Object[] possibleValuesMeasurement = { "CM to Mt", "CM to Km", "CM to Dm", "CM to Mm", "CM to Inch",
